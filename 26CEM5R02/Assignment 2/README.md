@@ -58,6 +58,7 @@ The following software and Python libraries were used:
 -   NumPy
 -   scikit-learn
 -   psutil
+-   matplotlib
 
 ------------------------------------------------------------------------
 
@@ -175,15 +176,10 @@ measurements.
 
 The final results obtained from the Python program are shown below.
 
-  -------------------------------------------------------------------------------
-  Model           R²          RMSE           MAE  Wall Time   CPU Time     Memory
-                                                        (s)        (s)     Change
-                                                                             (MB)
-  ------- ---------- ------------- ------------- ---------- ---------- ----------
-  MLR       0.783573   5796.556336   4181.561524   0.018850   0.015625   0.015625
-
-  KNNR      0.698759   6838.664775   3886.129575   0.027067   0.187500   0.000000
-  -------------------------------------------------------------------------------
+| Model | R² | RMSE | MAE | Wall Time (s) | CPU Time (s) | Memory Change (MB) |
+|---|---:|---:|---:|---:|---:|---:|
+| MLR | 0.783573 | 5796.556336 | 4181.561524 | 0.016355 | 0.117188 | 0.004297 |
+| KNNR | 0.698759 | 6838.664775 | 3886.129575 | 0.020191 | 0.162500 | 0.008594 |
 
 The values in the table were obtained by executing `assignment2.py`
 using the selected Insurance Premium Prediction dataset.
@@ -209,19 +205,36 @@ The Python program follows these steps:
 13. Generate KNNR predictions.
 14. Calculate KNNR performance metrics.
 15. Measure execution time and computational resource usage.
-16. Create a comparison table.
-17. Save the final results as `comparison_results.csv`.
+16. Reuse the saved computational benchmark on subsequent runs to keep reported computational values consistent.
+17. Create a comparison table.
+18. Create comparison graphs for prediction accuracy and computational performance.
+19. Save the final results as `comparison_results.csv`.
 
 ------------------------------------------------------------------------
 
 ## 12. Output File
 
 The program automatically creates a `results` folder and saves the final
-comparison table as:
+comparison table and generated comparison graphs.
+
+The final comparison table is saved as:
 
 `results/comparison_results.csv`
 
 The CSV file contains the performance results of both MLR and KNNR.
+
+The program also generates the following graph files:
+
+- `results/actual_vs_predicted_comparison.png`
+- `results/r2_comparison.png`
+- `results/error_comparison.png`
+- `results/time_comparison.png`
+- `results/memory_comparison.png`
+
+The computational benchmark used for the reported execution-time and memory
+values is stored in:
+
+`results/computational_benchmark.csv`
 
 ------------------------------------------------------------------------
 
@@ -253,3 +266,4 @@ The final model comparison is displayed in the console and saved to:
 
 `results/comparison_results.csv`
 
+The generated comparison graphs are saved in the `results` folder.
