@@ -47,7 +47,7 @@ Peak Memory Metrics (Fit Memory and Predict Memory)
 
 Result: 
 
-KNNR performed better than MLR. 
+KNNR achieved better predictive accuracy than MLR, with a higher R2 and lower RMSE and MAE. However, MLR had lower prediction time and lower prediction memory.
 
 
 File Structure:
